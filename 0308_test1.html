@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>폼의 입력내용 가져오기</title>
+</head>
+<body>
+    <section>
+        <form action="#" id="form">
+            <input type="text" name="word">
+            <input type="submit" value="검색">
+        </form>
+        <p id="output"></p>
+    </section>
+    <footer>자바스크립트 샘플</footer>
+    <script>
+        document.getElementById('form').onsubmit = function() {
+            var search = document.getElementById('form').word.value;
+            document.getElementById('output').textContent = '『' + search + '』 검색중...';
+            return false;
+        };
+
+    </script>
+
+</body>
+</html>

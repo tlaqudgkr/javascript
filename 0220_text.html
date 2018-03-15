@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body onload="myFunction()">
+    <p>변수 만들기</p>
+    <!-- 값을 넣을 수 있다. -->
+    <p id="demo"></p>
+    
+    
+    <h2> Variable Scope - Local Variables </h2>
+    <input type="submit" onclick="localVar()" value="LOCAL VARIABLE" />
+    <p id="aa"></p>
+    <p id="bb"></p>
+    
+    
+    <p id="demo2"></p>
+    <button onclick="document.getElementById('demo2').innerHTML = Date()">지금 몇시?</button>
+    
+<!--    onchange  -->
+    <select id="mySelect" onchange="myFn()">
+        <option value="Audi">Audi
+        <option value="BMW">BMW
+        <option value="Mercedes">Mercedes
+        <option value="Volvo">Volvo
+    </select>
+    
+<!--    onclick  -->
+    <button onclick="myFn()">Click here!</button>
+    
+    
+<!--    on mouseover  -->
+    <button id="demo" onclick="myFn()">배경색을 변경합니다.</button>
+<!--     onmouseover="myFn()" button 안에 onclick대신 onmouseover이 들어갈수있다.-->
+    
+<!--    on mouseout   -->
+    <p id="demo" onmouseover="myFn(true)" onmouseout="myFn(false)">배경색을 변경합니다.</p>
+    
+    
+    <p id="demo"></p>
+    
+    
+    <script>
+    var car = "기아";
+    var myElem = document.getElementById("demo");
+        myElem.innerHTML = car;
+        
+        
+    var person = {
+        firstName:"Byunghak",
+        lastName: "Sim",
+        age:50,
+        eyeColor:"blue",
+        fullName: function() {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+        
+    var localVar = function() {
+        var color = "Black";
+        function printColor() {
+            var color = "red";
+            document.getElementById("aa").innerHTML = color;
+        }
+        printColor();
+        
+        document.getElementById("bb").innerHTML = color;
+    };
+    
+        
+    function myFn() {
+        var x = document.getElementById("mySelect").value;
+        alert(x);
+    }
+        
+        
+    function myFn() {
+        alert("Hi~");
+    }
+
+
+    function myFn() {
+    var x = document.getElementsByTagName("body")[0];
+    x.style.backgroundColor = "red";
+    }
+    
+    
+    function myFn(para) {
+        var x = document.getElementsByTagName("body")[0];
+        if (para) {
+            x.style.backgroundColor = "blue";
+        } esle {
+            x.style.backgroundColor = "yellow";
+        }
+    }
+        
+    function myFunction() {
+    document.getElementById('demo').innerHTML = "<strong>준비되었습니다.(로딩완료!)</strong>"
+    }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

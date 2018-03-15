@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+    <tr>
+        <th id="counter1">0</th>
+        <th id="counter2">0</th>
+    </tr>
+    <tr>
+        <td><button id="button1">오른손</button></td>
+        <td><button id="button2">왼손</button></td>
+    </tr>
+    </table>
+    
+
+    <script>
+        window.onload = function() {
+            var button1 = document.getElementById('button1');
+            var button2 = document.getElementById('button2');
+            var counter1 = document.getElementById('counter1');
+            var counter2 = document.getElementById('counter2');
+
+            button1.onclick = function() {
+                counter1.innerHTML = Number(counter1.innerHTML)+1;
+            };
+            button2.onclick = function() {
+                counter2.innerHTML = Number(counter2.innerHTML)+1;
+            };
+        }
+    </script>
+</body>
+</html>
+
+
+

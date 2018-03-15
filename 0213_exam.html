@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="question">어떤 색의 우산을 좋아하시나요?</p>
+    <p>답: <span id="ans"></span></p>
+    
+    <script>
+        
+        var que = '어떤 색의 우산을 좋아하시나요?'
+        var myans = window.prompt(que);
+        
+        if (myans === "주황" || myans === "검정" || myans === "흰색" || myans === "빨강"){
+            console.log('그러면'+myans+'색 우산을 줄게');
+            document.getElementById("ans").textContent = "그러면" + myans + "색 우산을 줄게";
+        }
+        else {
+            console.log(myans+'없어');
+            document.getElementById("ans").textContent = "없다.";
+        }
+    </script>
+</body>
+</html>
+
+

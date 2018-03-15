@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="question">도시락 사세요..!!</p>
+    
+    <script>
+        var time = new Date().getHours();
+//        var que = '9-10시, 15-16시 하나 더!, 19-21시 30%할인'
+//        var myans = window.prompt(que);
+        console.log(time);
+        if (time === 9 || time === 15){
+            question.textContent = "하나사면 하나 더!";
+        } 
+        else if (time >=19 && time <21){
+            question.textContent = "30% 할인";
+        }
+    </script>
+</body>
+</html>

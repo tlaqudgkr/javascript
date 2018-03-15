@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="question">숫자를 맞혀봐!</p>
+    <p>답: <span id="ans"></span></p>
+    
+    <script>
+        var que = document.getElementById("question").textContent;
+        var random = Math.floor(Math.random()*10);
+        var myans = window.prompt('que');
+        console.log(random);
+        if (Number(myans) === random) {
+            ans.textContent = "정답";
+        }
+        else {
+            ans.textContent = "꽝";
+        }
+    </script>
+</body>
+</html>

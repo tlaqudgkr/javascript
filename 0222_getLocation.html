@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>위도와 경도 가져오기!</title>
+</head>
+<body onload="checkLoc()">
+    <button onclick="checkLoc()">경.위도 확인</button>
+    <p id="res"></p>
+    <script>
+        function checkLoc() {
+            
+        
+        // @(\d+.\d+),(\d+.\d+)
+        // https://www.google.com/maps/place/%ED%92%8D%EB%85%84%EC%A0%9C%EA%B3%BC/@35.8204976,127.1356557,15z/data=!4m8!1m2!2m1!1z7ZKN64WE7KCc6rO8!3m4!1s0x3570235fdf34a9d1:0x2a3991749ea08515!8m2!3d35.8183884!4d127.1471952?hl=ko-KR
+        var url = prompt("주소를 입력해 주세요.");
+        var myReg = /@(\d+.\d+),(\d+.\d+)/g;
+        var myArr = myReg.exec(url);
+        var text = "";
+        if (myArr) {
+            text += "위도" +myArr[1];
+            text += ", 경도" +myArr[2];
+            document.getElementById('res').textContent = text;
+        } else {
+            document.getElementById('res').textContent = "잘못 입력하셨어요.";
+        }
+        
+        }
+        
+    </script>
+</body>
+</html>

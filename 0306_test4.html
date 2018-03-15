@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>가위 바위 보로 몬스터 물리치기</title>
+</head>
+<body>
+    <script>
+        // 선, 후
+        var com = {point: 50};
+        var me = {point: 50};
+        // 선이 가위를 내면 | 0:가위, 1:바위, 2:보
+        var var1 = 0;
+        var var2 = 0;
+
+        function fnGaBaBo(para1, para2){
+            var resArr = [];
+            if (para1 === 0) {
+                if (para2 === 1) {
+                    com.point -= 2;
+                    resArr.push("com");
+                    resArr.push(2);
+                } else if (para2 === 2) {
+                    me.point -= 1;
+                    resArr.push("me");
+                    resArr.push(1);
+                }
+            } else if (para1 === 1) {
+                if (para2 === 2) {
+                    com.point -= 3;
+                    resArr.push("com");
+                    resArr.push(3);
+                } else if (para2 === 0) {
+                    me.point -= 2;
+                    resArr.push("me");
+                    resArr.push(2);
+                }
+            } else if (para1 === 2) {
+                if (para2 === 0) {
+                    com.point -= 1;
+                    resArr.push("com");
+                    resArr.push(1);
+                } else if (para2 === 1) {
+                    me.point -= 2;
+                    resArr.push("me");
+                    resArr.push(2);
+                }
+            }
+            return console.log(resArr);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #multitable {
+            float: left;
+            width: 10em;
+            border: 1px solid gray;
+            padding: 1em;
+            margin: 0.2em;
+        }
+    </style>
+</head>
+<body onload="myFor()">
+  <div id="demo"></div>
+  
+  <script>
+      
+  function myFor() {
+    var obj = document.getElementById('demo');
+    var temp = "";
+    for (var i = 1; i < 10; i++) {
+        temp += "<div id='multitable'>";
+        for (var j = 1; j < 10; j++) {
+            console.log(i+"x"+j+"="+(i*j));
+        }
+        temp += "</div>"
+    }
+      obj.innerHTML = temp;
+  }
+      
+  </script>
+</body>
+</html>

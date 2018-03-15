@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>중복없는 반복</title>
+</head>
+<body>
+    <p id="question">무작위 숫자 생성</p>
+    <p id="ans"></p>
+    <script>
+        var num = Math.floor(Math.random() * 100)+1;
+        var result = false;
+        var el = document.getElementById('ans');
+        
+        console.log(num);
+        function randomgame() {
+            var ans = Number(window.prompt(el.textContent, '1~100사이의 숫자를 입력해주세요.'));
+            if (ans === num) {
+                el.textContent = '맞다';
+                result = true;
+            } else if (ans > num) {
+                el.textContent = '크다';
+                result = false;
+            } else if (ans < num) {
+                el.textContent = '작다';
+                result = false;
+            } else {
+                el.textContent = '알 수 없는 오류 발생';
+                result = false;
+            }
+        }
+
+        while(!result) {
+            randomgame()
+        }
+        
+    </script>
+</body>
+</html>
